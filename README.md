@@ -1,4 +1,4 @@
-# 🔐 SecureTask RBAC – Full Stack Internship Assignment
+# 🔐 SecureTask API
 
 A production-ready secure task management application built with **Next.js (App Router)**, **Prisma ORM**, **Neon PostgreSQL**, and **JWT authentication**.
 
