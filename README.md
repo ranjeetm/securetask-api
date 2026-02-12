@@ -1,129 +1,179 @@
-# 🔐 SecureTask-API
+# 🔐 SecureTask RBAC – Full Stack Internship Assignment
 
-A production-ready secure task management backend built using **Next.js (App Router)**, **Prisma ORM**, **Neon PostgreSQL**, and **JWT authentication**.
+A production-ready secure task management application built with **Next.js (App Router)**, **Prisma ORM**, **Neon PostgreSQL**, and **JWT authentication**.
+
+This project includes:
+
+- Secure backend API
+- Role-based access control (RBAC)
+- Pagination
+- Swagger documentation
+- Basic frontend (authentication + dashboard)
+- Production deployment
 
 ---
 
-## 🚀 Live Deployment
+## 🚀 Live Demo
 
-**Swagger API Documentation:**  
-👉 https://securetask-api.vercel.app/api/docs  
+🌐 Application:  
+https://securetask-api.vercel.app/register  
 
-**Base API URL:**  
-👉 https://securetask-api.vercel.app  
+📄 Swagger API Documentation:  
+https://securetask-api.vercel.app/api/docs  
+
+💻 GitHub Repository:  
+https://github.com/ranjeetm/securetask-api  
 
 ---
 
 ## 📌 Features
 
-- User Registration & Login
-- Secure Password Hashing (bcrypt)
-- JWT Authentication
-- Role-Based Access Control (USER / ADMIN)
-- Task CRUD Operations
-- Pagination Support
-- Admin-only endpoints
-- Swagger API Documentation
-- Production Deployment on Vercel
-- Cloud Database (Neon PostgreSQL)
+### 🔑 Authentication
+- User Registration
+- User Login
+- Password hashing using bcrypt
+- JWT-based authentication
+- Protected routes
+
+### 👑 Role-Based Access Control (RBAC)
+- USER role: Manage own tasks
+- ADMIN role: Access all tasks
+- Secure role validation in backend
+
+### 📋 Task Management
+- Create Task
+- View Tasks (paginated)
+- Delete Task
+- Ownership validation
+- Admin-only endpoint
+
+### 🖥 Frontend (Basic Supportive UI)
+- Register page
+- Login page
+- Protected dashboard
+- JWT stored in localStorage
+- CRUD interaction with API
+- Error and success messages
+
+### 📦 Backend
+- Next.js App Router API routes
+- Prisma ORM
+- Neon PostgreSQL
+- Swagger Documentation
+- Production deployment on Vercel
 
 ---
-## 🧠 Architecture Overview
 
-Client → API Routes (Next.js App Router)
-       → JWT Authentication Layer
-       → Role-Based Access Control (RBAC)
-       → Prisma ORM
-       → Neon PostgreSQL Database
+## 🏗 Architecture Overview
+
+```
+Frontend (Next.js UI)
+        ↓
+API Routes (Next.js App Router)
+        ↓
+JWT Authentication Layer
+        ↓
+Role-Based Access Control
+        ↓
+Prisma ORM
+        ↓
+Neon PostgreSQL Database
+```
 
 ---
 
-## 🏗 Tech Stack
+## 🛠 Tech Stack
 
-- Next.js (App Router)
+- Next.js 14 (App Router)
 - TypeScript
 - Prisma ORM
 - PostgreSQL (Neon)
 - JSON Web Token (jsonwebtoken)
-- Zod (Validation)
+- bcryptjs
+- Zod (validation)
 - Swagger UI
+- Tailwind CSS
 - Vercel Deployment
 
 ---
 
-## 🔐 Authentication
-
-All protected routes require:
-
-Authorization: Bearer <your_jwt_token>
-
----
-## 🔒 Security Considerations
+## 🔐 Security Considerations
 
 - Passwords are hashed using bcrypt
 - JWT tokens are signed using a secret key
 - Protected routes validate JWT before execution
 - Role-based authorization enforced for admin endpoints
 - Environment variables are not exposed in the repository
----
-
-## 📂 Project Structure
-
-src/
- ├── app/api/v1
- │    ├── auth
- │    ├── tasks
- ├── lib
- │    ├── prisma.ts
- │    ├── auth.ts
- │    ├── swagger.ts
-prisma/
- └── schema.prisma
+- Production database credentials stored securely in Vercel
 
 ---
 
 ## 🧪 API Endpoints
 
-### 🔑 Authentication
+### Authentication
 - POST /api/v1/auth/register
 - POST /api/v1/auth/login
 
-### 📋 Tasks
+### Tasks
 - GET /api/v1/tasks (paginated)
 - POST /api/v1/tasks
 - PUT /api/v1/tasks/:id
 - DELETE /api/v1/tasks/:id
 
-### 👑 Admin
+### Admin
 - GET /api/v1/tasks/all (Admin only)
 
 ---
 
 ## ⚙️ Local Setup
 
-Clone the repository:
+Clone repository:
 
-git clone <your-repo-url>
+```
+git clone https://github.com/ranjeetm/securetask-api.git
 cd securetask-api
 npm install
+```
 
-Create a `.env` file in the root:
+Create `.env.local`:
 
+```
 DATABASE_URL=your_neon_connection_string
 JWT_SECRET=your_secret_key
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
 
-Run the development server:
+Run development server:
 
+```
 npm run dev
+```
 
 ---
 
-## 📦 Production
+## 🌍 Production
 
-Deployed on **Vercel** with **Neon PostgreSQL**.
+- Hosted on Vercel
+- Database hosted on Neon PostgreSQL
+- Prisma client generated during deployment
+- Swagger documentation available publicly
 
 ---
 
-## 📜 License
+## 📜 Purpose
 
-Created for internship evaluation purposes.
+This project was built as part of an internship assignment to demonstrate:
+
+- Backend architecture
+- Secure authentication
+- Role-based access control
+- Database integration
+- API design
+- Full-stack integration
+- Production deployment
+
+---
+
+## 👤 Author
+
+Ranjeet Mathade
