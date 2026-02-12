@@ -1,4 +1,4 @@
-# 🔐 SecureTask RBAC API
+# 🔐 SecureTask-API
 
 A production-ready secure task management backend built using **Next.js (App Router)**, **Prisma ORM**, **Neon PostgreSQL**, and **JWT authentication**.
 
@@ -28,6 +28,15 @@ A production-ready secure task management backend built using **Next.js (App Rou
 - Cloud Database (Neon PostgreSQL)
 
 ---
+## 🧠 Architecture Overview
+
+Client → API Routes (Next.js App Router)
+       → JWT Authentication Layer
+       → Role-Based Access Control (RBAC)
+       → Prisma ORM
+       → Neon PostgreSQL Database
+
+---
 
 ## 🏗 Tech Stack
 
@@ -48,6 +57,14 @@ All protected routes require:
 
 Authorization: Bearer <your_jwt_token>
 
+---
+## 🔒 Security Considerations
+
+- Passwords are hashed using bcrypt
+- JWT tokens are signed using a secret key
+- Protected routes validate JWT before execution
+- Role-based authorization enforced for admin endpoints
+- Environment variables are not exposed in the repository
 ---
 
 ## 📂 Project Structure
